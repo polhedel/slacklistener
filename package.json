@@ -5,13 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "loglevel": "^1.4.0",
+    "nconf": "^0.8.4",
     "node-wit": "^2.0.0",
     "slackbots": "^0.5.1"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "test"
-  },
+  "scripts": {},
   "keywords": [
     "slack",
     "bot"

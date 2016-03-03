@@ -10,14 +10,23 @@ function ignore(data, bot){
 function greeting(data, bot){
   log.debug('***** Printing greeting message *****');
 
-  bot.postMessageToUser('golcinab', 'What\'s up!\nOPSBOT enabled. If you need some help, type \'@opsbot /help\'', {as_user:'true'});
+  if( process.env.NODE_ENV == common.DEV_MODE){
+    bot.postMessageToUser('golcinab', 'What\'s up!\nOPSBOT enabled. If you need some help, type \'@opsbot /help\'', {as_user:'true'});
+  }else{
+    log.info(' TODO: Print greeting');
+  }
   // bot.postMessageToUser('golcinab', 'OPSBOT enabled. If you need some help, type \'@opsbot /help\'', {as_user:'true'});
 }
 
 function helping(data, bot){
   log.debug('***** Printing help message *****');
 
-  bot.postMessageToUser('golcinab', 'Searching help info. Please wait...', {as_user:'true'});
+  if( process.env.NODE_ENV == common.DEV_MODE){
+    bot.postMessageToUser('golcinab', 'Searching help info. Please wait...', {as_user:'true'});
+  }else{
+    log.info(' TODO: Print greeting');
+  }
+
 }
 
 exports.ignore = ignore;

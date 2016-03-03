@@ -1,5 +1,5 @@
 // Main index.js
-var config = require ('./config/config.json');
+var common = require ('./common/common');
 var slackbots = require('slackbots');
 var util = require('util');
 var log = require('loglevel');
@@ -8,14 +8,14 @@ var eventHandler = require('./handlers/eventHandler');
 var messageRouter = require('./routers/messageRouter');
 
 // Define loglevel
-log.setDefaultLevel('info');
+log.setDefaultLevel(common.config().loglevel);
 // log.setDefaultLevel('debug');
 
 log.info("** starting SlackListener ... **");
 
 // define new slackbot
 var bot = new slackbots({
-  token: config.slack_token         // Put bot token
+  token: common.config().slack_token         // Put bot token
 //name: 'opsbot'                                             // Bot name
 });
 
@@ -29,9 +29,9 @@ bot.on('open', eventHandler.handleOpen);
 // managing 'message' event
 bot.on('message', function(data){
     log.info('*** Handling \'message\' event ****');
-    log.trace('\t-> message data: '+util.inspect(data)+' ***');
+    log.trace('message data: '+util.inspect(data)+' ***');
 
-    log.info('\t-> message type: '+data.type+' ***');
+    log.debug('message type: '+data.type+' ***');
     messageRouter.route(data, bot);
   // handler.handleMessage
 });
