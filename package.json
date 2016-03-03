@@ -1,0 +1,21 @@
+{
+  "name": "slacklistener",
+  "version": "1.0.0",
+  "description": "Listener for SlackBot and handle messages",
+  "main": "index.js",
+  "dependencies": {
+    "loglevel": "^1.4.0",
+    "node-wit": "^2.0.0",
+    "slackbots": "^0.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "slack",
+    "bot"
+  ],
+  "author": "Gabriel Olcina",
+  "license": "MIT"
+}

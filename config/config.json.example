@@ -1,0 +1,11 @@
+#Config file with variables.
+#Must to be named config.json
+#Must have de following variables
+
+{
+  "wit_token": "WIT_TOKEN_CODE",
+  "slack_token": "SLACK_BOT_TOKEN",
+
+	"opsbot_id": "BOT_ID (TO DISCARD MESSAGE)",
+	"error_channel_id": "ERROR_CHANNEL_NAME (TO PRINT ERRORS) MUST BE A USERNAME"
+}
