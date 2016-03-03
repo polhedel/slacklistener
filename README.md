@@ -1,4 +1,3 @@
-# SlackListener.js
-
-Slack Bot listener
 # slacklistener
+
+Slack bot listener
