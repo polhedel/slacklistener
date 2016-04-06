@@ -6,7 +6,7 @@ const DEV_MODE = 'development';
 const PRO_MODE = 'production';
 
 function loadConfig (){
-  var node_env = process.NODE_ENV || DEV_MODE;
+  var node_env = process.env.NODE_ENV || DEV_MODE;
   return configfile[node_env];
 }
 
